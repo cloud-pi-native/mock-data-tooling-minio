@@ -1,0 +1,5 @@
+**/*.tgz
+sops/*.yml
+sops/*.yaml
+*.dec
+my_tmp/*
