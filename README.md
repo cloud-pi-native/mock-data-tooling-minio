@@ -6,9 +6,11 @@ Afin d'avoir un certificat valide, les ingress doivent être un sous le domaine 
 
 ## Installation
 
+Ce chart Helm peut être déployé sans changement via la console DSO. Mais il convient de modifier les values Helm depuis Argocd (`détails`, `parameters` puis `Edit` pour surcharger les values Helm), notamment pour éviter des conflits d'urls avec d'autres projets utilisant ce chart helm d'exemple.
+
 ### URL
 
-Les urls pour accéder au minio sont données à titre d'exemple, il convient de les modifier pour éviter des conflits avec d'autres projets utilisant ce chart helm d'exemple.
+Les urls pour accéder au minio sont données à titre d'exemple.
 
 ```yaml
 minio:
@@ -20,11 +22,11 @@ minio:
     hostname: api-minio-mock-data-tooling.apps.app1.numerique-interieur.com
 ```
 
-L'URL pour l'ingress permet d'accéder à la web ui de minio, tandis que celle sous apiIngress est utile pour la connexion S3 (voir après pour créer une paire AK/SK)
+L'URL pour l'ingress permet d'accéder à la web ui de minio, tandis que celle sous apiIngress est utile pour la connexion S3 (voir après pour créer une paire AK/SK).
 
 ### Secrets
 
-Il faut créer un secret nommé secrets.yml.dec avec le contenu suivant (changer le mot de passe avant):
+Si vous souhaitez modifier les mots de passe par défaut, il faut créer un secret nommé secrets.yml.dec avec le contenu suivant (changer le mot de passe avant):
 
 ```yaml
 apiVersion: isindir.github.com/v1alpha3
