@@ -1,4 +1,4 @@
-environment: ovh
+environment: scaleway
 phase: dev
 
 minio:
